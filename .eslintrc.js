@@ -16,6 +16,6 @@ module.exports = {
   rules: {
     "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
-    "explicit-module-boundary-types": false,
+    "@typescript-eslint/explicit-module-boundary-types": "off",
   },
 };
