@@ -12,7 +12,7 @@
     <br />
     <img v-bind:src="imgSrc" width="250px" />
     <br />
-    <button v-on:click="setInfo" v-bind:disabled="disabled">ボタン</button>
+    <button v-on:click="setInfo" v-bind:disabled="isDisabled">ボタン</button>
   </div>
 </template>
 
@@ -27,7 +27,7 @@ export default class Ex01Component extends Vue {
   private hobbies = [];
   private pageLink = '';
   private imgSrc = '';
-  private disabled = false;
+  private isDisabled = false;
 
   setInfo() {
     this.name = '鈴原千絵';
@@ -36,7 +36,7 @@ export default class Ex01Component extends Vue {
     this.hobbies = ['音楽', '映画鑑賞', '旅行'];
     this.pageLink = 'https://www.rakus-partners.co.jp/';
     this.imgSrc = 'img/IMG_2237.JPG';
-    this.disabled = true;
+    this.isDisabled = true;
   }
 }
 </script>
