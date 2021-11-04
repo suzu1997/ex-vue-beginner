@@ -18,10 +18,10 @@ export default class Ex04Component extends Vue {
   private price3 = 0;
 
   get totalPrice() {
-    return this.price1 + this.price2 + this.price3;
+    return Math.floor(this.price1 + this.price2 + this.price3);
   }
   get taxIncludedPrice() {
-    return this.totalPrice * 1.1;
+    return Math.floor(this.totalPrice * 1.1);
   }
 }
 </script>
