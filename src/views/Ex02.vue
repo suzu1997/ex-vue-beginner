@@ -2,7 +2,7 @@
   <div class="container">
     <div>名前: {{ name }}</div>
     <div>年齢: {{ age }}歳</div>
-    <div>10年後の年齢: {{ plus10Year }}歳</div>
+    <div>10年後の年齢: {{ plus10Age }}歳</div>
     <div>
       趣味:
       <span v-for="hobby of hobbies" v-bind:key="hobby">{{ hobby }} </span>
@@ -23,6 +23,7 @@ import { Component, Vue } from 'vue-property-decorator';
 export default class Ex01Component extends Vue {
   private name = '';
   private age = 0;
+  private plus10Age = 0;
   private hobbies = [];
   private pageLink = '';
   private imgSrc = '';
@@ -31,13 +32,11 @@ export default class Ex01Component extends Vue {
   setInfo() {
     this.name = '鈴原千絵';
     this.age = 24;
+    this.plus10Age = this.age + 10;
     this.hobbies = ['音楽', '映画鑑賞', '旅行'];
     this.pageLink = 'https://www.rakus-partners.co.jp/';
     this.imgSrc = 'img/IMG_2237.JPG';
     this.disabled = true;
-  }
-  get plus10Year(): number {
-    return this.age + 10;
   }
 }
 </script>
