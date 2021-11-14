@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div v-for="(input, index) of inputs" :key="input.id">
-      <input type="text" v-model.number="input.price" />
+    <div v-for="(input, index) of inputs" :key="index">
+      <input type="text" v-model.number="inputs[index]" />
       <button type="button" v-on:click="deleteInput(index)">削除</button>
       <br />
     </div>
@@ -18,30 +18,26 @@ import { Component, Vue } from 'vue-property-decorator';
 @Component
 export default class Ex06Component extends Vue {
   private inputs = [];
-  private inputId = 0;
 
   addInput() {
-    this.inputs.push({ id: this.inputId, price: 0 });
-    this.inputId++;
+    this.inputs.push(0);
   }
 
   deleteInput(i: number) {
     this.inputs.splice(i, 1);
-
-    console.log('削除: ' + i);
   }
 
   get totalPrice() {
     let totalPrice = 0;
     for (let input of this.inputs) {
-      totalPrice += Number(input.price);
+      totalPrice += Number(input);
     }
     return Math.floor(totalPrice);
   }
 
   get taxIncludedPrice() {
-    return Math.floor(this.totalPrice * 1.1);
+    const TAX_RATE = 1.1;
+    return Math.floor(this.totalPrice * TAX_RATE);
   }
 }
 </script>
-
