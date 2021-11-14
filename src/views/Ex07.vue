@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <h1>従業員検索</h1>
     <label for="name">名前：</label>
     <input type="text" id="name" v-model="inputName" />
@@ -32,4 +32,18 @@ export default class Ex07Component extends Vue {
 }
 </script>
 
-<style></style>
+<style scoped>
+.container {
+  margin: 0 auto;
+  width: 250px;
+  border: 1px solid #000;
+  padding: 5px;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+</style>
