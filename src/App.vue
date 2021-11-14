@@ -13,6 +13,7 @@
     <router-link to="/ex05">Ex05</router-link> |
     <router-link to="/ex06">Ex06</router-link> |
     <router-link to="/ex07">Ex07</router-link> |
+    <router-link to="/ex08">Ex08</router-link> |
   </div>
 </template>
 

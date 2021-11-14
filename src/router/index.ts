@@ -47,6 +47,10 @@ const routes: Array<RouteConfig> = [
     path: '/ex07',
     component: () => import('../views/Ex07.vue'),
   },
+  {
+    path: '/ex08',
+    component: () => import('../views/Ex08.vue'),
+  },
 ];
 
 const router = new VueRouter({
